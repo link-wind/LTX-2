@@ -1,0 +1,25 @@
+[project]
+name = "ltx-audio-core"
+version = "0.1.0"
+description = "Audio-only core implementation for LTX-2"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch~=2.7",
+    "torchaudio",
+    "einops",
+    "numpy",
+    "transformers>=4.52",
+    "safetensors",
+    "accelerate",
+    "scipy>=1.14",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.8,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "scikit-image>=0.25.2",
+]

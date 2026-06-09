@@ -1,9 +1,10 @@
 [tool.uv.sources]
 ltx-core = { workspace = true }
 ltx-pipelines = { workspace = true }
+ltx-audio-core = { workspace = true }
 
 [tool.uv.workspace]
-members = ["packages/*"]
+members = ["packages/*", "packages_audio/*"]
 
 [[tool.uv.index]]
 name = "pypi"
