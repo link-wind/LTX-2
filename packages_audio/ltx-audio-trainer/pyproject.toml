@@ -1,0 +1,75 @@
+[project]
+name = "ltx-audio-trainer"
+version = "0.1.0"
+description = "Audio-only training toolkit for LTX text-to-audio workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ltx-audio-core",
+    "accelerate>=1.2.1",
+    "bitsandbytes >=0.45.2; sys_platform == 'linux'",
+    "huggingface-hub[hf-xet]>=0.31.4",
+    "imageio>=2.37.0",
+    "optimum-quanto>=0.2.6",
+    "peft>=0.14.0",
+    "pydantic>=2.10.4",
+    "pyyaml>=6.0.2",
+    "rich>=13.9.4",
+    "torch>=2.6.0",
+    "torchaudio>=2.7.0",
+    "typer>=0.15.1",
+    "wandb>=0.19.11",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0.1",
+    "ruff>=0.8.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "W",
+    "I",
+    "N",
+    "ANN",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "DTZ",
+    "EXE",
+    "PIE",
+    "T20",
+    "PT",
+    "SIM",
+    "ARG",
+    "PTH",
+    "ERA",
+    "RUF",
+    "PL",
+]
+ignore = [
+    "ANN002",
+    "ANN003",
+    "ANN204",
+    "COM812",
+    "PTH123",
+    "PLR2004",
+]
+
+[tool.ruff.lint.pylint]
+max-args = 10
+
+[tool.ruff.lint.isort]
+known-first-party = ["ltx_audio_trainer", "ltx_audio_core", "ltx_audio_pipeline"]
